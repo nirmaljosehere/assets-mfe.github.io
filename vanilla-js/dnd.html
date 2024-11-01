@@ -24,10 +24,16 @@ governing permissions and limitations under the License.
         let imsInstance = null;
 
         const imsProps = {
-            imsClientId: "<IMS_CLIENT_ID_ASSOCIATED_WITH_YOUR_AEM_ASSETS_REPOSITORY>",
-            imsScope: "additional_info.projectedProductContext,openid",
+            imsClientId: "aemcs-demopot-assetselector",
+            imsScope: "AdobeID,openid,read_organizations,additional_info.projectedProductContext,read_organizations",
             redirectUrl: window.location.href,
             modalMode: true,
+            adobeImsOptions: {
+               modalSettings: {
+                  allowOrigin: window.location.origin,
+              },
+                 useLocalStorage: true,
+            }
         };
 
         function registerIMSTokenService() {

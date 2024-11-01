@@ -26,11 +26,11 @@ function init(){
 
 function onEnvironmentPropertiesChange(event) {
 
-    const stageImsClientId = "<ADOBE_PROVIDED_IMS_CLIENT_ID>";
-    const stageImsOrg = "9D0725C05E44FE1A0A49411C@AdobeOrg";
+    const stageImsClientId = "aemcs-demopot-assetselector";
+    const stageImsOrg = "8AB51935659C10E40A495FA2@AdobeOrg";
 
-    const prodImsClientId = "<ADOBE_PROVIDED_IMS_CLIENT_ID>";
-    const prodImsOrg = "999F6D0B617C10B80A495E2E@AdobeOrg";
+    const prodImsClientId = "aemcs-demopot-assetselector";
+    const prodImsOrg = "8AB51935659C10E40A495FA2@AdobeOrg";
 
     const environmentPropertiesInputImsClientId = document.getElementById('environment-properties-input-ims-client-id');
     const environmentPropertiesInputImsOrgId = document.getElementById('environment-properties-input-ims-org-id');
@@ -61,6 +61,12 @@ function onConfirmClick() {
         redirectUrl: window.location.href,
         imsOrg: environmentPropertiesInputImsOrgId.value,
         imsTokenService: undefined,
+        adobeImsOptions: {
+            modalSettings: {
+               allowOrigin: window.location.origin,
+            },
+            useLocalStorage: true,
+        }
     };
 
     const environmentPropertiesEvent = new CustomEvent('environmentProperties', {

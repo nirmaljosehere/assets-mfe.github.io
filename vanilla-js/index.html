@@ -13,30 +13,28 @@
 
         const imsProps = {
             imsClientId: "aemcs-demopot-assetselector",
-            imsScope: "additional_info.projectedProductContext,openid",
+            imsScope: "AdobeID,openid,read_organizations,additional_info.projectedProductContext",
             redirectUrl: window.location.href,
             modalMode: true,
-            // Optional parameters:
-            // modalMode: false, // set to false to open in a full page reload flow
-            // adobeImsOptions: {
-            //     modalSettings: {
-            //         allowOrigin: window.location.origin,
-            //     },
-            //     useLocalStorage: true,
-            // },
-            // onImsServiceInitialized: (service) => {
-            //     console.log("onImsServiceInitialized", service);
-            // },
-            // onAccessTokenReceived: (token) => {
-            //     console.log("onAccessTokenReceived", token);
-            // },
-            // onAccessTokenExpired: () => {
-            //     console.log("onAccessTokenError");
-            //     // re-trigger sign-in flow
-            // },
-            // onErrorReceived: (type, msg) => {
-            //     console.log("onErrorReceived", type, msg);
-            // },
+            adobeImsOptions: {
+               modalSettings: {
+                  allowOrigin: window.location.origin,
+              },
+                 useLocalStorage: true,
+             },
+            onImsServiceInitialized: (service) => {
+                console.log("onImsServiceInitialized", service);
+            },
+            onAccessTokenReceived: (token) => {
+                console.log("onAccessTokenReceived", token);
+             },
+            onAccessTokenExpired: () => {
+                 console.log("onAccessTokenError");
+                 // re-trigger sign-in flow
+             },
+            onErrorReceived: (type, msg) => {
+                 console.log("onErrorReceived", type, msg);
+             }
         };
 
         /**
@@ -139,7 +137,8 @@
             const assetSelectorProps = {
                 "onClose": onClose,
                 "handleSelection": handleSelection,
-                imsOrg:"8AB51935659C10E40A495FA2@AdobeOrg"
+                "imsOrg":"8AB51935659C10E40A495FA2@AdobeOrg",
+                "repositoryId": "delivery-p139665-e1420034.adobeaemcloud.com"
             }
 
             // Get the container element where the asset selector will be rendered.
