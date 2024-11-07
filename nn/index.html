@@ -103,121 +103,114 @@
             
             
             const assetSelectorProps = {
-                // "repositoryId": "delivery-p64502-e544757.adobeaemcloud.com",
-                // "repositoryId": "delivery-p64502-e544757.adobeaemcloud.com",
-                // "repositoryId": "delivery-p64502-e544757.adobeaemcloud.com",
-                // "repositoryId": "delivery-p67253-e153574-cmstg.adobeaemcloud.com",
-                // "repositoryId": "delivery-p106302-e1008170.adobeaemcloud.com",
-                // "repositoryId": "delivery-p56138-e410068.adobeaemcloud.com",
-                // p106302-e1008131 : reference demo shared
                 "repositoryId": "delivery-p139665-e1420034.adobeaemcloud.com",
                 "onClose": onClose,
                 "handleSelection": handleSelection,
                 hideTreeNav: true,
                 // apiKey: "polaris-asset-search-api-key",
-                filterSchema: [
-                    {
-                        header: 'File Type',
-                        groupKey: 'TopGroup',
-                        fields: [
-                            {
-                                element: 'checkbox',
-                                name: 'type',
-                                // name: 'property=metadata.repository.dc:format',
-                                options: [
-                                    {
-                                        label: 'Images',
-                                        value: 'image/*',
-                                    },
-                                    {
-                                        label: 'Videos',
-                                        value: 'video/*'
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        fields: [
-                            {
-                                element: 'checkbox',
-                                name: 'type',
-                                options: [
-                                    { label: 'JPG', value: 'image/jpeg' },
-                                    { label: 'PNG', value: 'image/png' },
-                                    { label: 'TIFF', value: 'image/tiff' },
-                                    { label: 'GIF', value: 'image/gif' },
-                                    { label: 'MP4', value: 'video/mp4' }
-                                ],
-                                columns: 3,
-                            },
-                        ],
-                        header: 'Mime Types',
-                        groupKey: 'MimeTypeGroup',
-                    },
-                    // ,
-                    // {
-                    //     fields: [
-                    //         {
-                    //             element: 'checkbox',
-                    //             name: 'property=metadata.repository.Country',
-                    //             options: [
-                    //                 { label: 'IND', value: 'India' },
-                    //                 { label: 'USA', value: 'USA' },
-                    //                 { label: 'AUS', value: 'Australia' }
-                    //             ],
-                    //             columns: 3,
-                    //         },
-                    //     ],
-                    //     header: 'Country',
-                    //     groupKey: 'CountryGroup',
-                    // },
-                    {
-                        fields: [
-                            {
-                                element: 'checkbox',
-                                name: 'property=metadata.embedded.photoshop:Country',
-                                options: [
-                                    { label: 'Thailan', value: 'Thailand' },
-                                    { label: 'USA', value: 'USA' },
-                                    { label: 'AUS', value: 'Australia' }
-                                ],
-                                columns: 3,
-                            },
-                        ],
-                        header: 'Country2',
-                        groupKey: 'CountryGroup2',
-                    }
+                // filterSchema: [
+                //     {
+                //         header: 'File Type',
+                //         groupKey: 'TopGroup',
+                //         fields: [
+                //             {
+                //                 element: 'checkbox',
+                //                 name: 'type',
+                //                 // name: 'property=metadata.repository.dc:format',
+                //                 options: [
+                //                     {
+                //                         label: 'Images',
+                //                         value: 'image/*',
+                //                     },
+                //                     {
+                //                         label: 'Videos',
+                //                         value: 'video/*'
+                //                     }
+                //                 ]
+                //             }
+                //         ]
+                //     },
+                //     {
+                //         fields: [
+                //             {
+                //                 element: 'checkbox',
+                //                 name: 'type',
+                //                 options: [
+                //                     { label: 'JPG', value: 'image/jpeg' },
+                //                     { label: 'PNG', value: 'image/png' },
+                //                     { label: 'TIFF', value: 'image/tiff' },
+                //                     { label: 'GIF', value: 'image/gif' },
+                //                     { label: 'MP4', value: 'video/mp4' }
+                //                 ],
+                //                 columns: 3,
+                //             },
+                //         ],
+                //         header: 'Mime Types',
+                //         groupKey: 'MimeTypeGroup',
+                //     },
+                //     // ,
+                //     // {
+                //     //     fields: [
+                //     //         {
+                //     //             element: 'checkbox',
+                //     //             name: 'property=metadata.repository.Country',
+                //     //             options: [
+                //     //                 { label: 'IND', value: 'India' },
+                //     //                 { label: 'USA', value: 'USA' },
+                //     //                 { label: 'AUS', value: 'Australia' }
+                //     //             ],
+                //     //             columns: 3,
+                //     //         },
+                //     //     ],
+                //     //     header: 'Country',
+                //     //     groupKey: 'CountryGroup',
+                //     // },
+                //     {
+                //         fields: [
+                //             {
+                //                 element: 'checkbox',
+                //                 name: 'property=metadata.embedded.photoshop:Country',
+                //                 options: [
+                //                     { label: 'Thailan', value: 'Thailand' },
+                //                     { label: 'USA', value: 'USA' },
+                //                     { label: 'AUS', value: 'Australia' }
+                //                 ],
+                //                 columns: 3,
+                //             },
+                //         ],
+                //         header: 'Country2',
+                //         groupKey: 'CountryGroup2',
+                //     }
 
-                    // ,
-                    // {
-                    //     fields: [
-                    //         {
-                    //             element: 'Number',
-                    //             name: 'property=metadata.embedded.tiff:ImageWidth',
-                    //             range: true,
-                    //             orientation: 'horizontal',
-                    //             quiet: true,
-                    //             label: "IMAGE WIDTH",
-                    //             hideArrows: true,
-                    //             columns: 2,
-                    //         },
-                    //         {
-                    //             element: 'Number',
-                    //             name: 'property=metadata.embedded.tiff:ImageHeight',
-                    //             range: true,
-                    //             orientation: 'horizontal',
-                    //             quiet: true,
-                    //             label: "IMAGE HEIGHT",
-                    //             hideArrows: true,
-                    //             columns: 2,
-                    //         },
-                    //     ],
-                    //     header: "IMAGE SIZE HEADER",
-                    //     groupKey: 'SizeGroup',
-                    // }
+                //     // ,
+                //     // {
+                //     //     fields: [
+                //     //         {
+                //     //             element: 'Number',
+                //     //             name: 'property=metadata.embedded.tiff:ImageWidth',
+                //     //             range: true,
+                //     //             orientation: 'horizontal',
+                //     //             quiet: true,
+                //     //             label: "IMAGE WIDTH",
+                //     //             hideArrows: true,
+                //     //             columns: 2,
+                //     //         },
+                //     //         {
+                //     //             element: 'Number',
+                //     //             name: 'property=metadata.embedded.tiff:ImageHeight',
+                //     //             range: true,
+                //     //             orientation: 'horizontal',
+                //     //             quiet: true,
+                //     //             label: "IMAGE HEIGHT",
+                //     //             hideArrows: true,
+                //     //             columns: 2,
+                //     //         },
+                //     //     ],
+                //     //     header: "IMAGE SIZE HEADER",
+                //     //     groupKey: 'SizeGroup',
+                //     // }
 
-                ]
+                // ]
             }
 
             
