@@ -12,16 +12,31 @@
         src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js"></script>
 
     <style>
+        :root {
+            --primary-color: #2E4374;
+            --secondary-color: #4B527E; 
+            --accent-color: #7C81AD;
+            --light-color: #E5C3A6;
+            --background-color: #f8f5f2;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
         .container {
             display: flex;
-            height: 100vh;
+            height: 80vh;
         }
         .left-pane {
             width: 300px;
-            border-right: 1px solid #ccc;
+            border-right: 1px solid var(--accent-color);
             padding: 20px;
             display: flex;
             flex-direction: column;
+            background-color: white;
         }
         .right-pane {
             flex: 1;
@@ -32,13 +47,13 @@
         }
         .asset-tree {
             flex: 1;
-            border: 1px solid #ddd;
+            border: 1px solid var(--accent-color);
             padding: 10px;
             margin-bottom: 20px;
             overflow-y: auto;
         }
         .select-asset-btn {
-            background-color: #007bff;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 5px;
@@ -46,6 +61,9 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+        }
+        .select-asset-btn:hover {
+            background-color: var(--secondary-color);
         }
         .selected-asset-img {
             max-width: 80%;
@@ -59,8 +77,26 @@
             transform: translate(-50%, -50%);
             z-index: 1000;
             background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            box-shadow: 0 0 10px rgba(46, 67, 116, 0.2);
             display: none;
+        }
+        .footer {
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-top: 1px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo {
+            height: 30px;
         }
     </style>
 
@@ -168,17 +204,27 @@
             </button>
         </div>
         <div class="right-pane">
-            <img id="selected-asset" class="selected-asset-img" src="" alt="Selected Asset">
+            <div id="selected-asset" class="selected-asset-img" style="border: 2px dashed var(--accent-color); display: flex; justify-content: center; align-items: center; min-height: 300px; background: white;">
+                <span style="color: var(--text-color);">No asset selected</span>
+            </div>
         </div>
     </div>
     <div id="asset-selector" style="height: 80vh; width: 80vw;">
     </div>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="./assets/logo.png" alt="Logo" class="footer-logo">
+            <span>Copyright © Nirmal Jose. All rights reserved.</span>
+        </div>
+    </footer>
+
     <style>
         .sf-header {
-            background: #f7f9fb;
-            border-bottom: 1px solid #d8dde6;
+            background: var(--primary-color);
+            border-bottom: 1px solid var(--accent-color);
             padding: 0.5rem 1rem;
+            color: white;
         }
         
         .header-content {
@@ -199,21 +245,22 @@
         
         .header-title h1 {
             font-size: 1.25rem;
-            color: #16325c;
+            color: white;
             margin: 0;
         }
         
         .header-btn {
             padding: 0.5rem 1rem;
-            background: #0070d2;
-            color: white;
+            background: var(--light-color);
+            color: var(--primary-color);
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-weight: bold;
         }
         
         .header-btn:hover {
-            background: #005fb2;
+            background: #d3b195;
         }
     </style>
 </body>
