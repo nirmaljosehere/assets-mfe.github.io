@@ -138,8 +138,20 @@
         }
 
         function handleSelection(selection) {
-            console.log("Selected assets: " + selection);
-            document.getElementById('selected-asset').src = selection[0]._links["http://ns.adobe.com/adobecloud/rel/rendition"].href;
+            console.log("Selected assets:", selection);
+            const selectedAssetContainer = document.getElementById('selected-asset');
+            
+            if (selection && selection[0]) {
+                // Clear the "No asset selected" text
+                selectedAssetContainer.innerHTML = '';
+                
+                // Create and append image element
+                const img = document.createElement('img');
+                img.src = selection[0]._links["http://ns.adobe.com/adobecloud/rel/rendition"].href;
+                img.className = 'selected-asset-img';
+                selectedAssetContainer.appendChild(img);
+            }
+            
             onClose();
         }
 
