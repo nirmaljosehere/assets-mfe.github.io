@@ -133,6 +133,20 @@
 </head>
 
 <body>
+    <header class="sf-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/assets/logo.png" alt="Logo" class="header-logo">
+            </div>
+            <div class="header-title">
+                <h1>Asset Repository</h1>
+            </div>
+            <div class="header-actions">
+                <button onclick="logoutImsFlow()" class="header-btn">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
         <div class="left-pane">
             <div class="asset-tree">
@@ -159,6 +173,49 @@
     </div>
     <div id="asset-selector" style="height: 80vh; width: 80vw;">
     </div>
+
+    <style>
+        .sf-header {
+            background: #f7f9fb;
+            border-bottom: 1px solid #d8dde6;
+            padding: 0.5rem 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .header-logo {
+            height: 40px;
+            margin-right: 1rem;
+        }
+        
+        .header-title {
+            flex: 1;
+        }
+        
+        .header-title h1 {
+            font-size: 1.25rem;
+            color: #16325c;
+            margin: 0;
+        }
+        
+        .header-btn {
+            padding: 0.5rem 1rem;
+            background: #0070d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .header-btn:hover {
+            background: #005fb2;
+        }
+    </style>
 </body>
 
 </html>
